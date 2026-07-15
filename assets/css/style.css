@@ -162,6 +162,20 @@ label:focus-visible,
   flex-shrink: 0;
 }
 
+.site-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.site-subtitle {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: normal;
+  color: var(--color-blue-light);
+}
+
 .header-home-link {
   color: var(--color-blue-light);
   font-size: 0.95rem;
