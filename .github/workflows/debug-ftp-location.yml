@@ -12,13 +12,16 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y lftp
 
       - name: Show server root and configured directory
+        timeout-minutes: 3
         run: |
+          COMMON_OPTS="set ssl:verify-certificate no; set ftp:ssl-force true; set net:timeout 15; set net:max-retries 2; set net:reconnect-interval-base 3;"
+
           echo "=== サーバーのルートディレクトリ ==="
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "set ssl:verify-certificate no; set ftp:ssl-force true; pwd; ls -la; bye" "$FTP_SERVER"
+          timeout 60 lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "$COMMON_OPTS pwd; ls -la; bye" "$FTP_SERVER" || echo "!!! ルートディレクトリの取得に失敗またはタイムアウトしました"
 
           echo ""
           echo "=== FTP_SERVER_DIR で指定した場所 ==="
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "set ssl:verify-certificate no; set ftp:ssl-force true; cd \"$FTP_SERVER_DIR\"; pwd; ls -la; bye" "$FTP_SERVER" || echo "!!! このパスへのcdに失敗しました(存在しない可能性があります)"
+          timeout 60 lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "$COMMON_OPTS cd \"$FTP_SERVER_DIR\"; pwd; ls -la; bye" "$FTP_SERVER" || echo "!!! このパスへのcdに失敗、またはタイムアウトしました(存在しない可能性があります)"
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
