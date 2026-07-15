@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>させぼ詐欺ストップナビ | 佐世保市の詐欺相談・被害防止サイト</title>
 <meta name="description" content="怪しい電話・SMS・メール・LINE・SNS・訪問・郵便を受けたとき、送金や入力の前に一度止まり、安全な相談先へ進むための佐世保市民向けサイトです。">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#16324f">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="詐欺ストップ">
 <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -126,6 +132,7 @@
       <a class="sub-link" href="apps.html">詐欺対策アプリ</a>
       <a class="sub-link" href="contacts.html">佐世保の相談先</a>
       <a class="sub-link" href="patterns.html">よくある手口を見る</a>
+      <a class="sub-link" href="use-as-app.html">このサイトをアプリとして使う</a>
     </nav>
   </section>
 
@@ -145,6 +152,7 @@
         <li><a href="apps.html">詐欺対策アプリ</a></li>
         <li><a href="supporters.html">家族・支援者の方へ</a></li>
         <li><a href="contacts.html">相談先</a></li>
+        <li><a href="use-as-app.html">アプリとして使う</a></li>
         <li><a href="about.html">このサイトについて</a></li>
       </ul>
     </nav>
@@ -161,6 +169,7 @@
 </div>
 
 <script src="./assets/js/app.js"></script>
+<script src="./assets/js/pwa.js"></script>
 <script src="./assets/js/data-loader.js"></script>
 <script>
   DataLoader.loadContacts().then(function (result) {

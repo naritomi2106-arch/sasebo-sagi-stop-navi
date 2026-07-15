@@ -1,0 +1,26 @@
+{
+  "name": "させぼ詐欺ストップナビ",
+  "short_name": "詐欺ストップ",
+  "description": "電話・SMS・メール・LINE・SNSなどの怪しい連絡を受けたときに、安全な行動と佐世保の相談先を案内するサイト",
+  "start_url": "/sagistop/",
+  "scope": "/sagistop/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "ja",
+  "background_color": "#ffffff",
+  "theme_color": "#16324f",
+  "icons": [
+    {
+      "src": "/sagistop/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/sagistop/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

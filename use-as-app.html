@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>このサイトをアプリとして使う | させぼ詐欺ストップナビ</title>
+<meta name="description" content="させぼ詐欺ストップナビは、ホーム画面に追加するとアプリのように起動できます。AndroidとiPhoneでの追加方法を案内します。">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#16324f">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="詐欺ストップ">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">本文へ移動</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-title" href="index.html">
+      <span class="site-header__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="#ffffff" stroke-width="1.5"/>
+          <path d="M8.5 12l2.5 2.5 4.5-5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      させぼ詐欺ストップナビ
+    </a>
+    <a class="header-home-link" href="index.html">トップへ</a>
+  </div>
+</header>
+
+<main id="main-content">
+  <h1>このサイトをアプリとして使う</h1>
+  <p>ホーム画面に追加すると、アイコンをタップするだけでアプリのように起動できます。データや個人情報を新たに登録する必要はありません。</p>
+
+  <div class="card" id="already-app-notice" hidden>
+    <h2>すでにアプリとして起動しています</h2>
+    <p>この画面は、ホーム画面のアイコンなどから起動された状態で表示されています。追加の操作は不要です。</p>
+  </div>
+
+  <section class="card" aria-labelledby="android-heading" id="android-section">
+    <h2 id="android-heading">Android</h2>
+    <p id="android-installed-note" hidden>すでにこの端末に追加されています。ホーム画面のアイコンから起動してください。</p>
+    <div id="android-install-area">
+      <p>「アプリをインストール」ボタンが表示される場合は、下のボタンを押してください。</p>
+      <button type="button" class="btn" id="install-button" hidden>アプリをインストール</button>
+      <p id="android-manual-note">ボタンが表示されない場合は、Chromeの右上のメニュー(縦三点)から「アプリをインストール」または「ホーム画面に追加」を選んでください。</p>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="iphone-heading" id="iphone-section">
+    <h2 id="iphone-heading">iPhoneに追加する方法</h2>
+    <p id="iphone-installed-note" hidden>すでにホーム画面から起動しています。追加の操作は不要です。</p>
+    <div id="iphone-safari-instructions">
+      <p>このサイトは、ホーム画面に追加するとアプリのように使えます。</p>
+      <ol>
+        <li>画面下の共有ボタンを押す</li>
+        <li>「ホーム画面に追加」を選ぶ</li>
+        <li>右上の「追加」を押す</li>
+      </ol>
+    </div>
+    <p id="iphone-non-safari-note" hidden>iPhoneではSafariで開いてから、ホーム画面に追加してください。</p>
+  </section>
+
+  <section class="card" aria-labelledby="unknown-heading">
+    <h2 id="unknown-heading">どちらか分からない場合</h2>
+    <ul>
+      <li>アプリを探す画面に「App Store」がある場合は iPhone です</li>
+      <li>アプリを探す画面に「Google Play」がある場合は Android です</li>
+      <li>分からない場合は、ご家族や携帯電話ショップの人と一緒に設定してください</li>
+    </ul>
+  </section>
+
+  <div class="btn-row">
+    <a class="btn" href="index.html">トップへ戻る</a>
+  </div>
+
+  <p class="disclaimer">
+    このサイトは、詐欺かどうかを確定するものではありません。<br>
+    少しでも不安がある場合は、相手との連絡を止め、警察や消費生活センターなどの公式窓口へ相談してください。
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav aria-label="サイト内リンク">
+      <ul class="footer-nav">
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="check.html">かんたん確認</a></li>
+        <li><a href="patterns.html">よくある手口</a></li>
+        <li><a href="apps.html">詐欺対策アプリ</a></li>
+        <li><a href="supporters.html">家族・支援者の方へ</a></li>
+        <li><a href="contacts.html">相談先</a></li>
+        <li><a href="use-as-app.html">アプリとして使う</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+    <p class="footer-disclaimer">
+      このサイトは、詐欺かどうかを確定するものではありません。<br>
+      少しでも不安がある場合は、相手との連絡を止め、警察や消費生活センターなどの公式窓口へ相談してください。
+    </p>
+    <p class="last-reviewed" data-last-reviewed>最終確認日を読み込み中です。</p>
+  </div>
+</footer>
+
+<div class="fixed-cta">
+  <a class="fixed-cta__link" href="contacts.html">相談する(相談先を見る)</a>
+</div>
+
+<script src="./assets/js/app.js"></script>
+<script src="./assets/js/pwa.js"></script>
+<script src="./assets/js/data-loader.js"></script>
+<script>
+  DataLoader.loadContacts().then(function (result) {
+    AppCommon.renderLastReviewed(result.data.lastReviewed);
+  });
+
+  (function () {
+    var installedNotice = document.getElementById("already-app-notice");
+    var androidInstalledNote = document.getElementById("android-installed-note");
+    var androidInstallArea = document.getElementById("android-install-area");
+    var installButton = document.getElementById("install-button");
+    var iphoneInstalledNote = document.getElementById("iphone-installed-note");
+    var iphoneSafariInstructions = document.getElementById("iphone-safari-instructions");
+    var iphoneNonSafariNote = document.getElementById("iphone-non-safari-note");
+
+    function refreshAndroidUI() {
+      if (window.PWA.isStandalone()) {
+        androidInstalledNote.hidden = false;
+        androidInstallArea.hidden = true;
+        return;
+      }
+      installButton.hidden = !window.PWA.isInstallAvailable();
+    }
+
+    function refreshIPhoneUI() {
+      if (!window.PWA.isIOSDevice()) return;
+      if (window.PWA.isStandalone()) {
+        iphoneInstalledNote.hidden = false;
+        iphoneSafariInstructions.hidden = true;
+        iphoneNonSafariNote.hidden = true;
+        return;
+      }
+      if (window.PWA.isSafariBrowser()) {
+        iphoneSafariInstructions.hidden = false;
+        iphoneNonSafariNote.hidden = true;
+      } else {
+        iphoneSafariInstructions.hidden = true;
+        iphoneNonSafariNote.hidden = false;
+      }
+    }
+
+    if (window.PWA.isStandalone()) {
+      installedNotice.hidden = false;
+    }
+
+    refreshAndroidUI();
+    refreshIPhoneUI();
+
+    window.addEventListener("pwa:installavailable", refreshAndroidUI);
+    window.addEventListener("pwa:installed", function () {
+      refreshAndroidUI();
+      refreshIPhoneUI();
+      installedNotice.hidden = false;
+    });
+
+    installButton.addEventListener("click", function () {
+      window.PWA.promptInstall().then(function () {
+        installButton.hidden = true;
+      });
+    });
+  })();
+</script>
+</body>
+</html>
