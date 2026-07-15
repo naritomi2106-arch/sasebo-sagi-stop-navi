@@ -1,0 +1,26 @@
+name: Debug FTP Location
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    name: List FTP directories
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Show server root and configured directory
+        run: |
+          echo "=== サーバーのルートディレクトリ ==="
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "set ssl:verify-certificate no; set ftp:ssl-force true; pwd; ls -la; bye" "$FTP_SERVER"
+
+          echo ""
+          echo "=== FTP_SERVER_DIR で指定した場所 ==="
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "set ssl:verify-certificate no; set ftp:ssl-force true; cd \"$FTP_SERVER_DIR\"; pwd; ls -la; bye" "$FTP_SERVER" || echo "!!! このパスへのcdに失敗しました(存在しない可能性があります)"
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
