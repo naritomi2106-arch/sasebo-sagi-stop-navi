@@ -1,0 +1,806 @@
+/* ===================================================================
+   させぼ詐欺ストップナビ 共通スタイル
+   方針: 白・紺・淡い青を基本。赤は緊急表示のみ。
+   360px幅でも崩れないモバイルファースト設計。
+   =================================================================== */
+
+:root {
+  --color-white: #ffffff;
+  --color-navy: #16324f;
+  --color-navy-dark: #0d1f33;
+  --color-blue-pale: #eaf3fb;
+  --color-blue-light: #d4e7f7;
+  --color-blue-mid: #4a7cae;
+  --color-text: #16202c;
+  --color-text-sub: #3c4a58;
+  --color-border: #c7d7e6;
+
+  --color-emergency: #b3261e;
+  --color-emergency-bg: #fdecea;
+  --color-emergency-border: #b3261e;
+
+  --color-high: #8a4b00;
+  --color-high-bg: #fdf1e2;
+  --color-high-border: #8a4b00;
+
+  --color-caution: #1a3c5e;
+  --color-caution-bg: #eef4fa;
+  --color-caution-border: #4a7cae;
+
+  --focus-ring: 3px solid #0b5fff;
+
+  --radius-card: 14px;
+  --radius-button: 10px;
+
+  --footer-cta-height: 84px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 var(--footer-cta-height) 0;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-navy);
+}
+
+main {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-navy-dark);
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0.8em 0;
+}
+
+ul, ol {
+  padding-left: 1.4em;
+}
+
+li {
+  margin: 0.4em 0;
+}
+
+/* ---------- フォーカス表示 ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+label:focus-visible,
+[tabindex]:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---------- スキップリンク ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 10px 16px;
+  z-index: 1000;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 14px 16px;
+}
+
+.site-header__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.site-header a.site-title {
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+.site-header__logo {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.header-home-link {
+  color: var(--color-blue-light);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- 緊急バナー(常時表示) ---------- */
+.emergency-banner {
+  background: var(--color-emergency-bg);
+  border: 2px solid var(--color-emergency-border);
+  color: var(--color-emergency);
+  margin: 16px;
+  padding: 14px;
+  border-radius: var(--radius-card);
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emergency-banner__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.emergency-banner p {
+  margin: 0 0 12px;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.emergency-call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 56px;
+  background: var(--color-emergency);
+  color: var(--color-white);
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: var(--radius-button);
+  text-decoration: none;
+  border: none;
+}
+
+.emergency-call-button:hover,
+.emergency-call-button:focus-visible {
+  background: #8f1e18;
+}
+
+/* ---------- アイコン(自作SVG/CSS) ---------- */
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.icon-emergency,
+.icon-high,
+.icon-caution {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------- ヒーローセクション ---------- */
+.hero {
+  padding: 24px 16px 8px;
+}
+
+.hero__lead {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-navy-dark);
+  margin: 0 0 16px;
+}
+
+.hero__sub {
+  background: var(--color-blue-pale);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  font-size: 1.05rem;
+}
+
+.hero__sub p {
+  margin: 0.3em 0;
+}
+
+/* ---------- 選択ボタン群(カード型) ---------- */
+.choice-list {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.choice-button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 64px;
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 14px 16px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--color-navy-dark);
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.choice-button:hover,
+.choice-button:focus-visible {
+  border-color: var(--color-navy);
+  background: var(--color-blue-pale);
+}
+
+.choice-button__icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.choice-button__text {
+  flex: 1;
+}
+
+/* ---------- 補助導線リンク ---------- */
+.sub-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.sub-link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  text-decoration: none;
+  color: var(--color-navy);
+  font-size: 1rem;
+  background: var(--color-white);
+}
+
+.sub-link:hover,
+.sub-link:focus-visible {
+  background: var(--color-blue-pale);
+}
+
+/* ---------- 3原則ボックス ---------- */
+.principles {
+  background: var(--color-blue-pale);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.principles ol {
+  margin: 8px 0 0;
+}
+
+/* ---------- 汎用カード ---------- */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 18px;
+  margin: 16px 0;
+}
+
+.card--emergency {
+  background: var(--color-emergency-bg);
+  border-color: var(--color-emergency-border);
+}
+
+.card--high {
+  background: var(--color-high-bg);
+  border-color: var(--color-high-border);
+}
+
+.card--caution {
+  background: var(--color-caution-bg);
+  border-color: var(--color-caution-border);
+}
+
+/* ---------- ボタン共通 ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  min-width: 44px;
+  padding: 12px 20px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  border-radius: var(--radius-button);
+  border: 2px solid var(--color-navy);
+  background: var(--color-navy);
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--color-navy-dark);
+  border-color: var(--color-navy-dark);
+}
+
+.btn--secondary {
+  background: var(--color-white);
+  color: var(--color-navy);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  background: var(--color-blue-pale);
+}
+
+.btn--tel {
+  background: var(--color-navy);
+}
+
+.btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+/* ---------- フォームパーツ(診断用) ---------- */
+.option-list {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-item {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-button);
+  background: var(--color-white);
+}
+
+.option-item label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 12px 14px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.option-item input[type="checkbox"],
+.option-item input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  accent-color: var(--color-navy);
+}
+
+.option-item:has(input:checked) {
+  border-color: var(--color-navy);
+  background: var(--color-blue-pale);
+}
+
+.step-indicator {
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  font-weight: bold;
+  margin: 0 0 4px;
+}
+
+.step-panel {
+  display: none;
+}
+
+.step-panel.is-active {
+  display: block;
+}
+
+/* ---------- 結果画面 ---------- */
+.result-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+
+.result-heading__label {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.result-heading--emergency .result-heading__label {
+  color: var(--color-emergency);
+}
+
+.result-heading--high .result-heading__label {
+  color: var(--color-high);
+}
+
+.result-heading--caution .result-heading__label {
+  color: var(--color-caution);
+}
+
+.result-section {
+  margin: 24px 0;
+}
+
+.result-section h2 {
+  border-left: 6px solid var(--color-navy);
+  padding-left: 10px;
+}
+
+.copy-box {
+  background: var(--color-blue-pale);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.copy-status {
+  font-weight: bold;
+  color: var(--color-navy-dark);
+  min-height: 1.6em;
+}
+
+.copy-status[data-visible="true"] {
+  background: var(--color-blue-light);
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* ---------- 免責 ---------- */
+.disclaimer {
+  font-size: 0.9rem;
+  color: var(--color-text-sub);
+  background: var(--color-blue-pale);
+  border-radius: var(--radius-card);
+  padding: 14px;
+  margin: 24px 0 8px;
+}
+
+.last-reviewed {
+  font-size: 0.85rem;
+  color: var(--color-text-sub);
+}
+
+/* ---------- 外部リンク表示 ---------- */
+.external-link::after {
+  content: "(外部サイトが新しいタブで開きます)";
+  font-size: 0.8rem;
+  color: var(--color-text-sub);
+  margin-left: 4px;
+}
+
+/* ---------- 連絡先リスト ---------- */
+.contact-card {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  margin: 14px 0;
+  background: var(--color-white);
+}
+
+.contact-card--priority1 {
+  border-color: var(--color-emergency-border);
+  background: var(--color-emergency-bg);
+}
+
+.contact-card__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 6px;
+}
+
+.contact-card__meta {
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  margin: 4px 0;
+}
+
+.contact-card__tel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 56px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-button);
+  text-decoration: none;
+}
+
+.contact-card--priority1 .contact-card__tel {
+  background: var(--color-emergency);
+}
+
+/* ---------- 手口一覧 ---------- */
+.pattern-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  margin: 14px 0;
+}
+
+.pattern-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.badge--emergency {
+  background: var(--color-emergency-bg);
+  color: var(--color-emergency);
+  border: 1px solid var(--color-emergency-border);
+}
+
+.badge--high {
+  background: var(--color-high-bg);
+  color: var(--color-high);
+  border: 1px solid var(--color-high-border);
+}
+
+.badge--medium {
+  background: var(--color-caution-bg);
+  color: var(--color-caution);
+  border: 1px solid var(--color-caution-border);
+}
+
+/* ---------- フッター ---------- */
+.site-footer {
+  background: var(--color-navy-dark);
+  color: var(--color-blue-light);
+  padding: 24px 16px 32px;
+  margin-top: 32px;
+}
+
+.site-footer__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.footer-nav a {
+  color: var(--color-white);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.footer-disclaimer {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--color-blue-light);
+}
+
+/* ---------- 下部固定「相談する」ボタン ---------- */
+.fixed-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  background: var(--color-white);
+  border-top: 2px solid var(--color-border);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+}
+
+.fixed-cta__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 608px;
+  margin: 0 auto;
+  min-height: 56px;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-size: 1.15rem;
+  font-weight: bold;
+  border-radius: var(--radius-button);
+  text-decoration: none;
+}
+
+.fixed-cta__link:hover,
+.fixed-cta__link:focus-visible {
+  background: var(--color-navy-dark);
+}
+
+/* ---------- noscript ---------- */
+.noscript-box {
+  background: var(--color-emergency-bg);
+  border: 2px solid var(--color-emergency-border);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  margin: 16px;
+}
+
+/* ---------- ユーティリティ ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-sub {
+  color: var(--color-text-sub);
+  font-size: 0.95rem;
+}
+
+.js-only {
+  display: none;
+}
+
+.js-enabled .js-only {
+  display: block;
+}
+
+.js-enabled .no-js-only {
+  display: none;
+}
+
+.data-fallback-notice {
+  background: var(--color-high-bg);
+  border: 1px solid var(--color-high-border);
+  border-radius: var(--radius-card);
+  padding: 14px;
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- OS選択(apps.html) ---------- */
+.os-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+@media (min-width: 480px) {
+  .os-choice {
+    flex-direction: row;
+  }
+  .os-choice .choice-button {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    min-height: 96px;
+  }
+}
+
+/* ---------- レスポンシブ調整 ---------- */
+@media (min-width: 600px) {
+  .hero__lead {
+    font-size: 1.8rem;
+  }
+  body {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 359px) {
+  main {
+    padding: 0 10px 24px;
+  }
+  .hero__lead {
+    font-size: 1.3rem;
+  }
+}
+
+/* ---------- prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .choice-button,
+  .btn,
+  .sub-link,
+  .fixed-cta__link {
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+}

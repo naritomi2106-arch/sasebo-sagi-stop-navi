@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>かんたん確認 | させぼ詐欺ストップナビ</title>
+<meta name="description" content="4つの質問に答えると、今の状況に応じた注意点と相談先が表示されます。回答は送信・保存されません。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">本文へ移動</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-title" href="index.html">
+      <span class="site-header__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="#ffffff" stroke-width="1.5"/>
+          <path d="M8.5 12l2.5 2.5 4.5-5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      させぼ詐欺ストップナビ
+    </a>
+    <a class="header-home-link" href="index.html">トップへ</a>
+  </div>
+</header>
+
+<div class="emergency-banner" role="note" aria-label="緊急時の案内">
+  <p class="emergency-banner__title">
+    <svg class="icon icon-emergency" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path d="M16 3 L30 28 L2 28 Z" fill="none" stroke="#b3261e" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="14.5" y="12" width="3" height="9" fill="#b3261e"/>
+      <rect x="14.5" y="23" width="3" height="3" fill="#b3261e"/>
+    </svg>
+    今すぐ危険な場合
+  </p>
+  <p>相手が家に来る、現金やカードを取りに来る、脅されている場合は、すぐに110番してください。</p>
+  <a class="emergency-call-button" href="tel:110" aria-label="警察110番へ今すぐ電話をかける">110番に電話する</a>
+</div>
+
+<main id="main-content">
+  <h1>かんたん確認</h1>
+  <p>今の状況を教えてください。回答はこの端末の中だけで処理され、どこにも送信・保存されません。結果は詐欺かどうかを確定するものではありません。</p>
+
+  <noscript>
+    <div class="noscript-box">
+      <p>JavaScriptが無効のため、かんたん確認はご利用いただけません。心配な場合は、次の相談先へ直接ご連絡ください。</p>
+      <p><a href="tel:110">110番(緊急・犯人が来る/脅されている場合)</a></p>
+      <p><a href="tel:%239110">警察相談専用電話 #9110</a></p>
+      <p><a href="tel:0956222591">佐世保市消費生活センター 0956-22-2591</a></p>
+      <p><a href="tel:188">消費者ホットライン 188</a></p>
+      <p><a href="contacts.html">相談先一覧を見る</a></p>
+    </div>
+  </noscript>
+
+  <form id="checker-form" class="js-only" novalidate>
+    <div class="step-panel is-active" data-step="1">
+      <p class="step-indicator">ステップ 1 / 4</p>
+      <h2 tabindex="-1" id="step-heading-1">どの方法で連絡が来ましたか</h2>
+      <ul class="option-list" id="channel-options"></ul>
+      <p id="step1-error" class="text-sub" role="alert" aria-live="assertive"></p>
+      <div class="btn-row">
+        <button type="button" class="btn" data-action="next" data-from="1">次へ</button>
+      </div>
+    </div>
+
+    <div class="step-panel" data-step="2">
+      <p class="step-indicator">ステップ 2 / 4</p>
+      <h2 tabindex="-1" id="step-heading-2">相手が何を求めていますか(複数選択できます)</h2>
+      <ul class="option-list" id="demand-options"></ul>
+      <div class="btn-row">
+        <button type="button" class="btn btn--secondary" data-action="back" data-from="2">戻る</button>
+        <button type="button" class="btn" data-action="next" data-from="2">次へ</button>
+      </div>
+    </div>
+
+    <div class="step-panel" data-step="3">
+      <p class="step-indicator">ステップ 3 / 4</p>
+      <h2 tabindex="-1" id="step-heading-3">どのような言葉を使っていますか(複数選択できます)</h2>
+      <ul class="option-list" id="phrase-options"></ul>
+      <div class="btn-row">
+        <button type="button" class="btn btn--secondary" data-action="back" data-from="3">戻る</button>
+        <button type="button" class="btn" data-action="next" data-from="3">次へ</button>
+      </div>
+    </div>
+
+    <div class="step-panel" data-step="4">
+      <p class="step-indicator">ステップ 4 / 4</p>
+      <h2 tabindex="-1" id="step-heading-4">すでに何かしてしまいましたか(複数選択できます)</h2>
+      <ul class="option-list" id="action-options"></ul>
+      <div class="btn-row">
+        <button type="button" class="btn btn--secondary" data-action="back" data-from="4">戻る</button>
+        <button type="submit" class="btn">結果を見る</button>
+      </div>
+    </div>
+
+    <div class="step-panel" data-step="result" id="result-panel" tabindex="-1" aria-live="polite"></div>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav aria-label="サイト内リンク">
+      <ul class="footer-nav">
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="check.html">かんたん確認</a></li>
+        <li><a href="patterns.html">よくある手口</a></li>
+        <li><a href="apps.html">詐欺対策アプリ</a></li>
+        <li><a href="supporters.html">家族・支援者の方へ</a></li>
+        <li><a href="contacts.html">相談先</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+    <p class="footer-disclaimer">
+      このサイトは、詐欺かどうかを確定するものではありません。<br>
+      少しでも不安がある場合は、相手との連絡を止め、警察や消費生活センターなどの公式窓口へ相談してください。
+    </p>
+    <p class="last-reviewed" data-last-reviewed>最終確認日を読み込み中です。</p>
+  </div>
+</footer>
+
+<div class="fixed-cta">
+  <a class="fixed-cta__link" href="contacts.html">相談する(相談先を見る)</a>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data-loader.js"></script>
+<script src="assets/js/checker.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "lastReviewed": "2026-07-15",
+  "officialGuide": "https://www.npa.go.jp/bureau/safetylife/sos47/apps/",
+  "notice": "警察庁推奨アプリはいずれもダウンロード・利用料無料。提供事業者、対応OS、権限、利用規約を確認して利用する。",
+  "commonFunctions": {
+    "android": [
+      "国際電話番号の発着信一括ブロック・警告",
+      "特殊詐欺等に利用された番号の発着信ブロック・警告",
+      "警察庁からの防犯情報"
+    ],
+    "iphone": [
+      "特殊詐欺等に利用された番号の発着信ブロック・警告",
+      "警察庁からの防犯情報"
+    ]
+  },
+  "apps": [
+    {
+      "id": "ntt-townpage",
+      "name": "詐欺対策 by NTTタウンページ",
+      "provider": "NTTタウンページ",
+      "price": "無料",
+      "android": "https://play.google.com/store/apps/details?id=jp.co.ntt_tp.sagitaisaku",
+      "iphone": "https://apps.apple.com/jp/app/id6756647308",
+      "officialStatus": "警察庁推奨アプリ"
+    },
+    {
+      "id": "fraud-buster-lite",
+      "name": "詐欺バスター Lite",
+      "provider": "トレンドマイクロ",
+      "price": "無料",
+      "android": "https://play.google.com/store/apps/details?id=com.trendmicro.fraudbusterlite",
+      "iphone": "https://apps.apple.com/jp/app/id6756911225",
+      "officialStatus": "警察庁推奨アプリ"
+    }
+  ]
+}

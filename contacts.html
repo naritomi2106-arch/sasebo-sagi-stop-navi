@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>佐世保の相談先 | させぼ詐欺ストップナビ</title>
+<meta name="description" content="緊急時は110番、緊急でない相談は警察相談専用電話#9110、契約や請求のトラブルは佐世保市消費生活センター、消費者ホットラインは188。電話番号はタップで発信できます。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">本文へ移動</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-title" href="index.html">
+      <span class="site-header__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke="#ffffff" stroke-width="1.5"/>
+          <path d="M8.5 12l2.5 2.5 4.5-5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      させぼ詐欺ストップナビ
+    </a>
+    <a class="header-home-link" href="index.html">トップへ</a>
+  </div>
+</header>
+
+<main id="main-content">
+  <h1>佐世保の相談先</h1>
+  <p>状況に応じて、次の窓口へご連絡ください。電話番号はタップするとそのまま発信できます。</p>
+
+  <!--
+    JavaScriptが無効な場合でも主要な相談先が確認できるよう、
+    最初から静的HTMLとして4件の連絡先を記載している。
+    JSONの読み込みに成功した場合は、下のスクリプトでこの内容を最新の情報に描画し直す。
+  -->
+  <div id="contacts-container">
+    <div class="contact-card contact-card--priority1">
+      <p class="contact-card__name">警察(緊急)</p>
+      <p class="contact-card__meta">犯人が来る、現金やカードを取りに来る、脅されている、今まさに被害が起きている</p>
+      <p class="contact-card__meta">受付時間: 24時間</p>
+      <a class="contact-card__tel" href="tel:110" aria-label="警察110番へ電話をかける">110 に電話する</a>
+    </div>
+
+    <div class="contact-card">
+      <p class="contact-card__name">警察相談専用電話</p>
+      <p class="contact-card__meta">緊急ではないが、怪しい電話・SMS・SNS・投資話を相談したい</p>
+      <p class="contact-card__meta">受付時間: 地域や回線により案内が異なるため、つながらない場合は最寄りの警察署へ</p>
+      <a class="contact-card__tel" href="tel:%239110" aria-label="警察相談専用電話 シャープ9110へ電話をかける">#9110 に電話する</a>
+    </div>
+
+    <div class="contact-card">
+      <p class="contact-card__name">佐世保市消費生活センター</p>
+      <p class="contact-card__meta">契約、請求、通販、架空請求、訪問販売、詐欺的な勧誘など</p>
+      <p class="contact-card__meta">受付時間: 月～金 8:30～17:00(祝日・年末年始を除く)</p>
+      <a class="contact-card__tel" href="tel:0956222591" aria-label="佐世保市消費生活センターへ電話をかける">0956-22-2591 に電話する</a>
+      <a class="sub-link external-link" href="https://www.city.sasebo.lg.jp/siminseikatu/syouhi/soudan.html" target="_blank" rel="noopener noreferrer">公式サイトを見る</a>
+    </div>
+
+    <div class="contact-card">
+      <p class="contact-card__name">消費者ホットライン</p>
+      <p class="contact-card__meta">近くの消費生活相談窓口につないでほしい</p>
+      <a class="contact-card__tel" href="tel:188" aria-label="消費者ホットライン188へ電話をかける">188 に電話する</a>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <a class="btn btn--secondary" href="check.html">かんたん確認をする</a>
+  </div>
+
+  <p class="disclaimer">
+    このサイトは、詐欺かどうかを確定するものではありません。<br>
+    少しでも不安がある場合は、相手との連絡を止め、警察や消費生活センターなどの公式窓口へ相談してください。
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav aria-label="サイト内リンク">
+      <ul class="footer-nav">
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="check.html">かんたん確認</a></li>
+        <li><a href="patterns.html">よくある手口</a></li>
+        <li><a href="apps.html">詐欺対策アプリ</a></li>
+        <li><a href="supporters.html">家族・支援者の方へ</a></li>
+        <li><a href="contacts.html">相談先</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+    <p class="footer-disclaimer">
+      このサイトは、詐欺かどうかを確定するものではありません。<br>
+      少しでも不安がある場合は、相手との連絡を止め、警察や消費生活センターなどの公式窓口へ相談してください。
+    </p>
+    <p class="last-reviewed" data-last-reviewed>最終確認日を読み込み中です。</p>
+  </div>
+</footer>
+
+<div class="fixed-cta">
+  <a class="fixed-cta__link" href="check.html">かんたん確認をする</a>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data-loader.js"></script>
+<script>
+  DataLoader.loadContacts().then(function (result) {
+    if (!result.usedFallback) {
+      AppCommon.renderContactCards(result.data.contacts, document.getElementById("contacts-container"));
+    }
+    AppCommon.renderLastReviewed(result.data.lastReviewed);
+  });
+</script>
+</body>
+</html>
