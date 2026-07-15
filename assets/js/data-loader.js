@@ -71,7 +71,7 @@
   }
 
   function loadJson(filename, fallback) {
-    var url = "data/" + filename;
+    var url = "./data/" + filename;
     if (!global.fetch) {
       return Promise.resolve({ data: fallback, usedFallback: true });
     }
