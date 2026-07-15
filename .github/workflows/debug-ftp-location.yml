@@ -27,3 +27,16 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+
+      - name: Upload location marker file
+        timeout-minutes: 2
+        run: |
+          echo "location-check-$(date +%s)" > _ftp_location_test.txt
+          COMMON_OPTS="set ssl:verify-certificate no; set ftp:ssl-force true; set net:timeout 15; set net:max-retries 2;"
+          timeout 60 lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -e "$COMMON_OPTS cd \"$FTP_SERVER_DIR\"; put _ftp_location_test.txt; bye"
+          cat _ftp_location_test.txt
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
